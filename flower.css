@@ -139,16 +139,16 @@ body {
 .pot {
     position: absolute;
     bottom: 0;
+    top: 90%;
     left: 50%;
-    width: 100px;
-    height: 80px;
+    width: 160px;
+    height: 100px;
     /* background: #8b4513; */
     background: linear-gradient(to bottom, #a0522d, #682f07);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
     text-align: center;
-    /* color: linear-gradient(to right, white, grey); */
     color: white;
     font-size: 2rem;
     
