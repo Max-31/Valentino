@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    /* background: #f0f8ff; */
+    /* background: black; */
+    background: radial-gradient(circle, rgba(50, 50, 50, 1) 60%, #121212 100%); /* Circular gradient */
+            
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+    font-family: "Quicksand";
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+/* Stem */
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    height: 0;
+    /* background: #228b22; */
+    /* background: #76c893; */
+    background: #5cb85c;
+    animation: grow-stem 3s ease-in-out forwards;
+}
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    width: 15px;
+    height: 60px;
+    padding: 5%;
+    /* background: #228b22; */
+    /* background: #76c893; */
+    /* background: #4caf50; */
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    animation: grow-leaf 2s ease-in-out forwards;
+}
+
+.leaf.left {
+    bottom: 20%;
+    left: 27%;
+    background: linear-gradient(to bottom, #246924, #4caf50); 
+    transform-origin: right center;
+    animation-delay: 2.5s;
+}
+
+.leaf.right {
+    bottom: 30%;
+    right: 27%;
+    background: linear-gradient(to top, #307730, #4caf50); 
+    transform-origin: right center;
+    animation-delay: 3s;
+}
+
+/* Petals */
+.flower {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    animation: bloom 1s ease-in-out forwards 4s;
+}
+
+.petal {
+    position: absolute;
+    width: 15px;
+    height: 60px;
+    padding: 20%;
+    /* width: 50px;
+    height: 50px; */
+    /* background: #ff69b4; */
+    /* background: #e63946; */
+    /* background: #f5f5f5; */
+    background: linear-gradient(to bottom, #ffffff, #f3f3f3, #8b8b8b);
+    border-radius: 50%;
+    transform-origin: center bottom;
+}
+
+.petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-30px);
+}
+
+.petal:nth-child(2) {
+    transform: rotate(45deg) translateY(-30px);
+}
+
+.petal:nth-child(3) {
+    transform: rotate(90deg) translateY(-30px);
+}
+
+.petal:nth-child(4) {
+    transform: rotate(135deg) translateY(-30px);
+}
+
+.petal:nth-child(5) {
+    transform: rotate(180deg) translateY(-30px);
+}
+
+.petal:nth-child(6) {
+    transform: rotate(225deg) translateY(-30px);
+}
+
+.petal:nth-child(7) {
+    transform: rotate(270deg) translateY(-30px);
+}
+
+.petal:nth-child(8) {
+    transform: rotate(315deg) translateY(-30px);
+}
+
+.center {
+    position: absolute;
+    top: 115%;
+    left: 30%;
+    width: 30px;
+    height: 30px;
+    padding: 10%;
+    background: #ffd700; /* Yellow for center */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: bloom-center 1s ease-in-out forwards 4s;
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.8);
+}
+
+.pot {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    /* background: #8b4513; */
+    background: linear-gradient(to bottom, #a0522d, #682f07);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    text-align: center;
+    /* color: linear-gradient(to right, white, grey); */
+    color: white;
+    font-size: 2rem;
+    
+    transform: translateX(-50%);
+}
+
+.pot::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #a0522d; /* Lighter brown for the rim */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Animation Keyframes */
+@keyframes grow-stem {
+    to {
+        height: 300px;
+    }
+}
+
+@keyframes grow-leaf {
+    to {
+        transform: scale(1) rotate(30deg);
+        opacity: 1;
+    }
+}
+
+@keyframes bloom {
+    to {
+        width: 80px;
+        height: 80px;
+        opacity: 1;
+    }
+}
+
+@keyframes bloom-center {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
