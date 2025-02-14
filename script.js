@@ -4,6 +4,10 @@ function display(){
     let str= document.getElementById('inputId').value;
     // console.log(str);
 
+    if(str === ""){
+        alert("Please enter a Name!");
+        window.location.replace('./index.html');
+    }
 
     let display;
     fetch('./flower.html')
@@ -26,7 +30,7 @@ function display(){
             newWin.document.writeln(newHtml);
             newWin.document.close();
 
-            window.open('./flower.html');
+            // window.open('./flower.html');
         }   
     )
 
